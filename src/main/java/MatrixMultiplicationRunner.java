@@ -16,12 +16,13 @@ public class MatrixMultiplicationRunner{
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException{
 
         Configuration conf = new Configuration();
-        Job job = new Job(conf, "MatrixMultiply");
         
         // M = m*n matrix; N = n*p matrix 
         conf.set("m", "1000");
         conf.set("n", "100");
         conf.set("p", "1000");
+        
+        Job job = new Job(conf, "MatrixMultiply");
         
         // Set Jar
         job.setJarByClass(MatrixMultiplicationRunner.class);
