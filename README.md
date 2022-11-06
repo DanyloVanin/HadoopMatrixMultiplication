@@ -39,3 +39,10 @@
  N,4,0,-1.0
  ....
  ```
+
+## Usage
+
+1. Compile jar using `mvn clean package`
+2. Copy jar to your container filesystem: `docker cp target/HadoopMatrixMultiplication-1.0-SNAPSHOT.jar <container_id>:/tmp`
+3. Copy input to hdfs folder. Sample input can be found in `./input` folder (but be aware that expected matrix size is hardcoded). 
+4. Run your job: `hadoop jar HadoopMatrixMultiplication-1.0-SNAPSHOT.jar MatrixMultiplicationRunner <input> <output>`

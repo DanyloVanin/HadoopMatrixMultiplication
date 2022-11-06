@@ -18,6 +18,8 @@ public class MatrixMultiplicationMapper extends Mapper<LongWritable,Text,Text,Te
         String[] matrixElement = matrixLine.split(",");
         if (matrixElement[0].equals("M")){
             writeMatrixM(p, matrixElement, context);
+        } else {
+            writeMatrixN(m, matrixElement, context);
         }
     }
 
